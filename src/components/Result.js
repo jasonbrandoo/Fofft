@@ -3,8 +3,12 @@ const Result = (props) => {
 
   if (props) {
     html += `
-      <div class="template-result__message">${props.message}</div>
-      <div class="template-result__subtitle">${props.subtitle}</div>
+      <div class="template-result__message">
+        ${props.message}
+        <div class="template-result__subtitle">
+          ${props.subtitle}
+        </div>
+      </div>
     `;
   } else {
     html += `

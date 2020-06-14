@@ -35,25 +35,29 @@ const App = () => {
 
     // Handle click event from inputed data
     document.querySelector('.template-input__button').addEventListener('click', async () => {
-      document.querySelector('.template-result').classList =
-        'template-result template-result--show';
+      if (Object.keys(obj).length === 0) {
+        alert('Please input all field');
+      } else {
+        document.querySelector('.template-result').classList =
+          'template-result template-result--show';
 
-      // Scroll to bottom page
-      document.querySelector('.template-result').scrollIntoView({ behavior: 'smooth' });
+        // Scroll to bottom page
+        document.querySelector('.template-result').scrollIntoView({ behavior: 'smooth' });
 
-      const urlParams = arr.join('/');
+        const urlParams = arr.join('/');
 
-      // Render result with null value
-      document.querySelector('.template-result').innerHTML = Result(null);
+        // Render result with null value
+        document.querySelector('.template-result').innerHTML = Result(null);
 
-      const message = await fetchFoaas(urlParams);
+        const message = await fetchFoaas(urlParams);
 
-      // Render result with data from api
-      document.querySelector('.template-result').innerHTML = Result(message);
+        // Render result with data from api
+        document.querySelector('.template-result').innerHTML = Result(message);
 
-      // Reset Object and Array
-      obj = {};
-      arr = [];
+        // Reset Object and Array
+        obj = {};
+        arr = [];
+      }
     });
   });
 };

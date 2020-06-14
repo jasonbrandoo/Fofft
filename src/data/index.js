@@ -535,7 +535,6 @@ const template = [
     url: '/tucker/:from',
     fields: [{ name: 'From', field: 'from' }],
   },
-  { name: 'Version', url: '/version', fields: [] },
   {
     name: 'Waste',
     url: '/waste/:name/:from',

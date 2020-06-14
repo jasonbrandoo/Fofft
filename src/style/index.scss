@@ -27,8 +27,20 @@ body {
   .box {
     background: #393939;
     padding: 1rem;
+    margin: 0 1rem;
     border-radius: .25rem;
+    animation: boxAnimation 1s ease-in;
+
+    @keyframes boxAnimation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
+  
 
   .template-list {
     margin-top: 1rem;
@@ -36,14 +48,14 @@ body {
     flex-direction: column;
     align-items: center;
 
-    .template-list__text {
+    &__text {
       color: white;
       font-weight: 700;
       font-size: 30px;
       margin-bottom: 1rem;
     }
 
-    .template-list__select {
+    &__select {
       font-size: 16px;
       font-family: sans-serif;
       font-weight: 700;
@@ -54,7 +66,7 @@ body {
       margin: 0;
       border: 1px solid #aaa;
       box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-      border-radius: .5em;
+      border-radius: .25rem;
     }
   }
 
@@ -63,7 +75,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    .template-input__list {
+    &__list {
       display: inline-block;
       margin-right: 1rem;
       width: 123px;
@@ -71,11 +83,11 @@ body {
       font-weight: 700;
     }
 
-    .template-input__field {
+    &__field {
       margin-bottom: 1rem;
     }
 
-    .template-input__button {
+    &__button {
       display: block;
       margin-bottom: 1rem;
       width: 100%;
@@ -86,7 +98,8 @@ body {
       font-family: sans-serif;
       font-size: 20px;
       border: 3px solid white;
-      border-radius: .5em;
+      border-radius: .25rem;
+      position: relative;
     }
   }
 }
@@ -98,21 +111,32 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
 
-  .template-result__message {
+  &__message {
     font-weight: bolder;
     line-height: 1.5;
+
+    &__subtitle {
+      font-weight: 100;
+    }
   }
 
-  .template-result__subtitle {
-    font-weight: 100;
-  }
-
-  .template-result__loading {
+  &__loading {
     background: white;
     color: #393939;
     text-align: center;
+    animation: loading .8s infinite ease-out;
+
+    @keyframes loading {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
   }
 }
 

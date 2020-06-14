@@ -6,7 +6,7 @@ const Input = (props) => {
     html += `
       <label for="${value.name}" class="template-input__list">
         ${value.name}
-        </label>
+      </label>
       <input id="${value.name}" class="template-input__field" type="text" name=${value.field} />
     `;
   });
