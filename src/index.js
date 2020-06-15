@@ -5,12 +5,6 @@ import Input from './components/Input';
 import Result from './components/Result';
 import Copyright from './components/copyright';
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('../public/service-worker.js');
-  });
-}
-
 const App = () => {
   let obj = {}; // Object for handle api field
   let arr = []; // Array for make new URL
