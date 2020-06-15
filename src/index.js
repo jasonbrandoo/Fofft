@@ -3,6 +3,13 @@ import template from './data';
 import List from './components/List';
 import Input from './components/Input';
 import Result from './components/Result';
+import Copyright from './components/copyright';
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('../public/service-worker.js');
+  });
+}
 
 const App = () => {
   let obj = {}; // Object for handle api field
@@ -60,6 +67,7 @@ const App = () => {
       }
     });
   });
+  document.querySelector('.copyright').innerHTML = Copyright();
 };
 
 // Init
